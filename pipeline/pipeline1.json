@@ -38,7 +38,8 @@
 									"path": "$['vendorid']"
 								},
 								"sink": {
-									"name": "vendorid"
+									"name": "vendorid",
+									"type": "String"
 								}
 							},
 							{
@@ -46,7 +47,8 @@
 									"path": "$['tpep_pickup_datetime']"
 								},
 								"sink": {
-									"name": "tpep_pickup_datetime"
+									"name": "tpep_pickup_datetime",
+									"type": "String"
 								}
 							},
 							{
@@ -54,7 +56,8 @@
 									"path": "$['tpep_dropoff_datetime']"
 								},
 								"sink": {
-									"name": "tpep_dropoff_datetime"
+									"name": "tpep_dropoff_datetime",
+									"type": "String"
 								}
 							},
 							{
@@ -62,7 +65,8 @@
 									"path": "$['passenger_count']"
 								},
 								"sink": {
-									"name": "passenger_count"
+									"name": "passenger_count",
+									"type": "String"
 								}
 							},
 							{
@@ -70,7 +74,8 @@
 									"path": "$['trip_distance']"
 								},
 								"sink": {
-									"name": "trip_distance"
+									"name": "trip_distance",
+									"type": "String"
 								}
 							},
 							{
@@ -78,7 +83,8 @@
 									"path": "$['pickup_longitude']"
 								},
 								"sink": {
-									"name": "pickup_longitude"
+									"name": "pickup_longitude",
+									"type": "String"
 								}
 							},
 							{
@@ -86,15 +92,8 @@
 									"path": "$['pickup_latitude']"
 								},
 								"sink": {
-									"name": "pickup_latitude"
-								}
-							},
-							{
-								"source": {
-									"path": "$['store_and_fwd_flag']"
-								},
-								"sink": {
-									"name": "store_and_fwd_flag"
+									"name": "pickup_latitude",
+									"type": "String"
 								}
 							},
 							{
@@ -102,7 +101,8 @@
 									"path": "$['dropoff_longitude']"
 								},
 								"sink": {
-									"name": "dropoff_longitude"
+									"name": "dropoff_longitude",
+									"type": "String"
 								}
 							},
 							{
@@ -110,7 +110,8 @@
 									"path": "$['dropoff_latitude']"
 								},
 								"sink": {
-									"name": "dropoff_latitude"
+									"name": "dropoff_latitude",
+									"type": "String"
 								}
 							},
 							{
@@ -118,7 +119,8 @@
 									"path": "$['payment_type']"
 								},
 								"sink": {
-									"name": "payment_type"
+									"name": "payment_type",
+									"type": "String"
 								}
 							},
 							{
@@ -126,7 +128,8 @@
 									"path": "$['fare_amount']"
 								},
 								"sink": {
-									"name": "fare_amount"
+									"name": "fare_amount",
+									"type": "String"
 								}
 							},
 							{
@@ -134,7 +137,8 @@
 									"path": "$['extra']"
 								},
 								"sink": {
-									"name": "extra"
+									"name": "extra",
+									"type": "String"
 								}
 							},
 							{
@@ -142,7 +146,8 @@
 									"path": "$['tip_amount']"
 								},
 								"sink": {
-									"name": "tip_amount"
+									"name": "tip_amount",
+									"type": "String"
 								}
 							},
 							{
@@ -150,7 +155,8 @@
 									"path": "$['tolls_amount']"
 								},
 								"sink": {
-									"name": "tolls_amount"
+									"name": "tolls_amount",
+									"type": "String"
 								}
 							},
 							{
@@ -158,42 +164,30 @@
 									"path": "$['total_amount']"
 								},
 								"sink": {
-									"name": "total_amount"
+									"name": "total_amount",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['pickup_location']['type']"
+									"path": "$['store_and_fwd_flag']"
 								},
 								"sink": {
-									"name": "pickup_location_type"
+									"name": "store_and_fwd_flag",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['pickup_location']['coordinates'][0]"
+									"path": "$['mta_tax']"
 								},
 								"sink": {
-									"name": "pickup_location_coordinates']["
-								}
-							},
-							{
-								"source": {
-									"path": "$['dropoff_location']['type']"
-								},
-								"sink": {
-									"name": "dropoff_location_type"
-								}
-							},
-							{
-								"source": {
-									"path": "$['dropoff_location']['coordinates'][0]"
-								},
-								"sink": {
-									"name": "dropoff_location_coordinates']["
+									"name": "mta_tax",
+									"type": "String"
 								}
 							}
-						]
+						],
+						"collectionReference": ""
 					}
 				},
 				"inputs": [
