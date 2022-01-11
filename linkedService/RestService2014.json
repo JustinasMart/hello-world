@@ -1,0 +1,12 @@
+{
+	"name": "RestService2014",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": " https://data.cityofnewyork.us/resource/gkne-dk5s.json",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
