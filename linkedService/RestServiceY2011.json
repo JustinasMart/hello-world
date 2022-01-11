@@ -1,0 +1,12 @@
+{
+	"name": "RestServiceY2011",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://data.cityofnewyork.us/resource/uwyp-dntv.json",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
