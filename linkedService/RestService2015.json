@@ -1,0 +1,12 @@
+{
+	"name": "RestService2015",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": " https://data.cityofnewyork.us/resource/2yzn-sicd.json",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
