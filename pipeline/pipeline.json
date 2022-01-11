@@ -170,15 +170,6 @@
 							},
 							{
 								"source": {
-									"path": "$['store_and_fwd_flag']"
-								},
-								"sink": {
-									"name": "store_and_fwd_flag",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"path": "$['mta_tax']"
 								},
 								"sink": {
@@ -368,14 +359,6 @@
 								},
 								"sink": {
 									"name": "total_amount"
-								}
-							},
-							{
-								"source": {
-									"path": "$['store_and_fwd_flag']"
-								},
-								"sink": {
-									"name": "store_and_fwd_flag"
 								}
 							}
 						],
