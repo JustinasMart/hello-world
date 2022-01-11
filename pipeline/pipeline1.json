@@ -1,0 +1,215 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "SourceY009",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['vendorid']"
+								},
+								"sink": {
+									"name": "vendorid"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tpep_pickup_datetime']"
+								},
+								"sink": {
+									"name": "tpep_pickup_datetime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tpep_dropoff_datetime']"
+								},
+								"sink": {
+									"name": "tpep_dropoff_datetime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['passenger_count']"
+								},
+								"sink": {
+									"name": "passenger_count"
+								}
+							},
+							{
+								"source": {
+									"path": "$['trip_distance']"
+								},
+								"sink": {
+									"name": "trip_distance"
+								}
+							},
+							{
+								"source": {
+									"path": "$['pickup_longitude']"
+								},
+								"sink": {
+									"name": "pickup_longitude"
+								}
+							},
+							{
+								"source": {
+									"path": "$['pickup_latitude']"
+								},
+								"sink": {
+									"name": "pickup_latitude"
+								}
+							},
+							{
+								"source": {
+									"path": "$['store_and_fwd_flag']"
+								},
+								"sink": {
+									"name": "store_and_fwd_flag"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dropoff_longitude']"
+								},
+								"sink": {
+									"name": "dropoff_longitude"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dropoff_latitude']"
+								},
+								"sink": {
+									"name": "dropoff_latitude"
+								}
+							},
+							{
+								"source": {
+									"path": "$['payment_type']"
+								},
+								"sink": {
+									"name": "payment_type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['fare_amount']"
+								},
+								"sink": {
+									"name": "fare_amount"
+								}
+							},
+							{
+								"source": {
+									"path": "$['extra']"
+								},
+								"sink": {
+									"name": "extra"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tip_amount']"
+								},
+								"sink": {
+									"name": "tip_amount"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tolls_amount']"
+								},
+								"sink": {
+									"name": "tolls_amount"
+								}
+							},
+							{
+								"source": {
+									"path": "$['total_amount']"
+								},
+								"sink": {
+									"name": "total_amount"
+								}
+							},
+							{
+								"source": {
+									"path": "$['pickup_location']['type']"
+								},
+								"sink": {
+									"name": "pickup_location_type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['pickup_location']['coordinates'][0]"
+								},
+								"sink": {
+									"name": "pickup_location_coordinates']["
+								}
+							},
+							{
+								"source": {
+									"path": "$['dropoff_location']['type']"
+								},
+								"sink": {
+									"name": "dropoff_location_type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dropoff_location']['coordinates'][0]"
+								},
+								"sink": {
+									"name": "dropoff_location_coordinates']["
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "RestResource1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
