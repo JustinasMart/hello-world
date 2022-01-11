@@ -1,9 +1,0 @@
-{
-	"name": "DataEngFactory",
-	"location": "northeurope",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "806d0292-6c76-4f5e-9150-336c030a90a0",
-		"tenantId": "e953d205-e415-44d3-9e37-523ea0ddd6be"
-	}
-}
