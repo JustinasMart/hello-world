@@ -243,7 +243,7 @@
 							},
 							{
 								"source": {
-									"path": "$['dropoff_datetime']"
+									"path": "$['tpep_dropoff_datetime']"
 								},
 								"sink": {
 									"name": "dropoff_datetime"
@@ -753,14 +753,6 @@
 								},
 								"sink": {
 									"name": "total_amount"
-								}
-							},
-							{
-								"source": {
-									"path": "$['store_and_fwd_flag']"
-								},
-								"sink": {
-									"name": "store_and_fwd_flag"
 								}
 							}
 						],
