@@ -1383,11 +1383,157 @@
 							"supportRFC5988": "true"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['vendorid']"
+								},
+								"sink": {
+									"name": "vendorid"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tpep_pickup_datetime']"
+								},
+								"sink": {
+									"name": "tpep_pickup_datetime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tpep_dropoff_datetime']"
+								},
+								"sink": {
+									"name": "tpep_dropoff_datetime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['passenger_count']"
+								},
+								"sink": {
+									"name": "passenger_count"
+								}
+							},
+							{
+								"source": {
+									"path": "$['trip_distance']"
+								},
+								"sink": {
+									"name": "trip_distance"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ratecodeid']"
+								},
+								"sink": {
+									"name": "ratecodeid"
+								}
+							},
+							{
+								"source": {
+									"path": "$['pulocationid']"
+								},
+								"sink": {
+									"name": "pulocationid"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dolocationid']"
+								},
+								"sink": {
+									"name": "dolocationid"
+								}
+							},
+							{
+								"source": {
+									"path": "$['payment_type']"
+								},
+								"sink": {
+									"name": "payment_type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['fare_amount']"
+								},
+								"sink": {
+									"name": "fare_amount"
+								}
+							},
+							{
+								"source": {
+									"path": "$['extra']"
+								},
+								"sink": {
+									"name": "extra"
+								}
+							},
+							{
+								"source": {
+									"path": "$['mta_tax']"
+								},
+								"sink": {
+									"name": "mta_tax"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tip_amount']"
+								},
+								"sink": {
+									"name": "tip_amount"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tolls_amount']"
+								},
+								"sink": {
+									"name": "tolls_amount"
+								}
+							},
+							{
+								"source": {
+									"path": "$['improvement_surcharge']"
+								},
+								"sink": {
+									"name": "improvement_surcharge"
+								}
+							},
+							{
+								"source": {
+									"path": "$['total_amount']"
+								},
+								"sink": {
+									"name": "total_amount"
+								}
+							}
+						],
+						"collectionReference": "",
+						"mapComplexValuesToString": true
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "RestResourceY2017",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable8",
 						"type": "DatasetReference"
 					}
 				]
