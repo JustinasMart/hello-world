@@ -1,8 +1,8 @@
 {
-	"name": "AzureSqlTable2",
+	"name": "AzureSqlTable3",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabase11",
+			"referenceName": "AzureSqlDatabase12",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "Y2011"
+			"table": "Y2012"
 		}
 	}
 }
