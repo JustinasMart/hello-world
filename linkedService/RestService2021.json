@@ -1,0 +1,12 @@
+{
+	"name": "RestService2021",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://data.cityofnewyork.us/resource/kxp8-n2sj.json",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
