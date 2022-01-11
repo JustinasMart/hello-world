@@ -974,6 +974,199 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "SourceY2015",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['passenger_count']"
+								},
+								"sink": {
+									"name": "passenger_count"
+								}
+							},
+							{
+								"source": {
+									"path": "$['trip_distance']"
+								},
+								"sink": {
+									"name": "trip_distance"
+								}
+							},
+							{
+								"source": {
+									"path": "$['pickup_longitude']"
+								},
+								"sink": {
+									"name": "pickup_longitude"
+								}
+							},
+							{
+								"source": {
+									"path": "$['pickup_latitude']"
+								},
+								"sink": {
+									"name": "pickup_latitude"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ratecodeid']"
+								},
+								"sink": {
+									"name": "ratecodeid"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dropoff_longitude']"
+								},
+								"sink": {
+									"name": "dropoff_longitude"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dropoff_latitude']"
+								},
+								"sink": {
+									"name": "dropoff_latitude"
+								}
+							},
+							{
+								"source": {
+									"path": "$['fare_amount']"
+								},
+								"sink": {
+									"name": "fare_amount"
+								}
+							},
+							{
+								"source": {
+									"path": "$['extra']"
+								},
+								"sink": {
+									"name": "extra"
+								}
+							},
+							{
+								"source": {
+									"path": "$['mta_tax']"
+								},
+								"sink": {
+									"name": "mta_tax"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tip_amount']"
+								},
+								"sink": {
+									"name": "tip_amount"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tolls_amount']"
+								},
+								"sink": {
+									"name": "tolls_amount"
+								}
+							},
+							{
+								"source": {
+									"path": "$['total_amount']"
+								},
+								"sink": {
+									"name": "total_amount"
+								}
+							},
+							{
+								"source": {
+									"path": "$['vendor_id']"
+								},
+								"sink": {
+									"name": "vendor_id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['pickup_datetime']"
+								},
+								"sink": {
+									"name": "pickup_datetime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dropoff_datetime']"
+								},
+								"sink": {
+									"name": "dropoff_datetime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['payment_type']"
+								},
+								"sink": {
+									"name": "payment_type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['imp_surcharge']"
+								},
+								"sink": {
+									"name": "imp_surcharge"
+								}
+							}
+						],
+						"collectionReference": "",
+						"mapComplexValuesToString": true
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "RestResourceY2015",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable6",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
