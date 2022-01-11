@@ -7,7 +7,80 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "vendorid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "tpep_pickup_datetime",
+				"type": "nvarchar"
+			},
+			{
+				"name": "tpep_dropoff_datetime",
+				"type": "nvarchar"
+			},
+			{
+				"name": "passenger_count",
+				"type": "nvarchar"
+			},
+			{
+				"name": "trip_distance",
+				"type": "nvarchar"
+			},
+			{
+				"name": "pickup_longitude",
+				"type": "nvarchar"
+			},
+			{
+				"name": "pickup_latitude",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ratecodeid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "store_and_fwd_flag",
+				"type": "nvarchar"
+			},
+			{
+				"name": "dropoff_longitude",
+				"type": "nvarchar"
+			},
+			{
+				"name": "dropoff_latitude",
+				"type": "nvarchar"
+			},
+			{
+				"name": "payment_type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "fare_amount",
+				"type": "nvarchar"
+			},
+			{
+				"name": "extra",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mta_tax",
+				"type": "nvarchar"
+			},
+			{
+				"name": "tip_amount",
+				"type": "nvarchar"
+			},
+			{
+				"name": "tolls_amount",
+				"type": "nvarchar"
+			},
+			{
+				"name": "total_amount",
+				"type": "nvarchar"
+			}
+		],
 		"typeProperties": {
 			"schema": "dbo",
 			"table": "Y2012"
