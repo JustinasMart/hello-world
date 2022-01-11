@@ -230,7 +230,8 @@
 									"path": "$['vendorid']"
 								},
 								"sink": {
-									"name": "vendorid"
+									"name": "vendorid",
+									"type": "String"
 								}
 							},
 							{
@@ -238,15 +239,17 @@
 									"path": "$['tpep_pickup_datetime']"
 								},
 								"sink": {
-									"name": "tpep_pickup_datetime"
+									"name": "tpep_pickup_datetime",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "$['tpep_dropoff_datetime']"
+									"path": "$['dropoff_datetime']"
 								},
 								"sink": {
-									"name": "dropoff_datetime"
+									"name": "dropoff_datetime",
+									"type": "String"
 								}
 							},
 							{
@@ -254,7 +257,8 @@
 									"path": "$['passenger_count']"
 								},
 								"sink": {
-									"name": "passenger_count"
+									"name": "passenger_count",
+									"type": "String"
 								}
 							},
 							{
@@ -262,7 +266,8 @@
 									"path": "$['trip_distance']"
 								},
 								"sink": {
-									"name": "trip_distance"
+									"name": "trip_distance",
+									"type": "String"
 								}
 							},
 							{
@@ -270,7 +275,8 @@
 									"path": "$['pickup_longitude']"
 								},
 								"sink": {
-									"name": "pickup_longitude"
+									"name": "pickup_longitude",
+									"type": "String"
 								}
 							},
 							{
@@ -278,7 +284,8 @@
 									"path": "$['pickup_latitude']"
 								},
 								"sink": {
-									"name": "pickup_latitude"
+									"name": "pickup_latitude",
+									"type": "String"
 								}
 							},
 							{
@@ -286,7 +293,8 @@
 									"path": "$['ratecodeid']"
 								},
 								"sink": {
-									"name": "ratecodeid"
+									"name": "ratecodeid",
+									"type": "String"
 								}
 							},
 							{
@@ -294,7 +302,8 @@
 									"path": "$['dropoff_longitude']"
 								},
 								"sink": {
-									"name": "dropoff_longitude"
+									"name": "dropoff_longitude",
+									"type": "String"
 								}
 							},
 							{
@@ -302,7 +311,8 @@
 									"path": "$['dropoff_latitude']"
 								},
 								"sink": {
-									"name": "dropoff_latitude"
+									"name": "dropoff_latitude",
+									"type": "String"
 								}
 							},
 							{
@@ -310,7 +320,8 @@
 									"path": "$['payment_type']"
 								},
 								"sink": {
-									"name": "payment_type"
+									"name": "payment_type",
+									"type": "String"
 								}
 							},
 							{
@@ -318,7 +329,8 @@
 									"path": "$['fare_amount']"
 								},
 								"sink": {
-									"name": "fare_amount"
+									"name": "fare_amount",
+									"type": "String"
 								}
 							},
 							{
@@ -326,7 +338,8 @@
 									"path": "$['extra']"
 								},
 								"sink": {
-									"name": "extra"
+									"name": "extra",
+									"type": "String"
 								}
 							},
 							{
@@ -334,7 +347,8 @@
 									"path": "$['mta_tax']"
 								},
 								"sink": {
-									"name": "mta_tax"
+									"name": "mta_tax",
+									"type": "String"
 								}
 							},
 							{
@@ -342,7 +356,8 @@
 									"path": "$['tip_amount']"
 								},
 								"sink": {
-									"name": "tip_amount"
+									"name": "tip_amount",
+									"type": "String"
 								}
 							},
 							{
@@ -350,7 +365,8 @@
 									"path": "$['tolls_amount']"
 								},
 								"sink": {
-									"name": "tolls_amount"
+									"name": "tolls_amount",
+									"type": "String"
 								}
 							},
 							{
@@ -358,11 +374,13 @@
 									"path": "$['total_amount']"
 								},
 								"sink": {
-									"name": "total_amount"
+									"name": "total_amount",
+									"type": "String"
 								}
 							}
 						],
-						"collectionReference": ""
+						"collectionReference": "",
+						"mapComplexValuesToString": true
 					}
 				},
 				"inputs": [
