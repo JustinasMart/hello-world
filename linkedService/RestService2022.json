@@ -1,0 +1,12 @@
+{
+	"name": "RestService2022",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://data.cityofnewyork.us/resource/f9tw-8p66.json?$$app_token=6Y0VUW1uWY9rU0W8gTvNUbM93",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
