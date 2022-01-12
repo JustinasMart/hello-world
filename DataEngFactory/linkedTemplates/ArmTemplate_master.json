@@ -1,0 +1,271 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "DataEngFactory"
+		},
+		"AzureSqlDatabase009_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase009'"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+		},
+		"AzureSqlDatabase11_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase11'"
+		},
+		"AzureSqlDatabase12_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase12'"
+		},
+		"AzureSqlDatabase13_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase13'"
+		},
+		"AzureSqlDatabase14_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase14'"
+		},
+		"AzureSqlDatabase15_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase15'"
+		},
+		"AzureSqlDatabase16_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase16'"
+		},
+		"AzureSqlDatabase17_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase17'"
+		},
+		"AzureSqlDatabase18_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase18'"
+		},
+		"AzureSqlDatabase19_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase19'"
+		},
+		"AzureSqlDatabase20_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase20'"
+		},
+		"AzureSqlDatabase21_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase21'"
+		},
+		"AzureSqlDatabase000009_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase000009'"
+		},
+		"RestService2013_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/t7ny-aygi.json"
+		},
+		"RestService2014_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": " https://data.cityofnewyork.us/resource/gkne-dk5s.json"
+		},
+		"RestService2015_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": " https://data.cityofnewyork.us/resource/2yzn-sicd.json"
+		},
+		"RestService2016_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/uacg-pexx.json"
+		},
+		"RestService2017_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/biws-g3hs.json"
+		},
+		"RestService2018_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/t29m-gskq.json"
+		},
+		"RestService2019_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/2upf-qytp.json"
+		},
+		"RestService2020_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/kxp8-n2sj.json"
+		},
+		"RestService2021_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/m6nq-qud6.json"
+		},
+		"RestService2022_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/f9tw-8p66.json?$$app_token=6Y0VUW1uWY9rU0W8gTvNUbM93"
+		},
+		"RestServiceY009_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": " https://data.cityofnewyork.us/resource/f9tw-8p66.json"
+		},
+		"RestServiceY2011_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/uwyp-dntv.json"
+		},
+		"RestServiceY2012_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/kerk-3eby.json"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "DataEngFactory_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase009_connectionString": {
+						"value": "[parameters('AzureSqlDatabase009_connectionString')]"
+					},
+					"AzureSqlDatabase1_connectionString": {
+						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
+					},
+					"AzureSqlDatabase11_connectionString": {
+						"value": "[parameters('AzureSqlDatabase11_connectionString')]"
+					},
+					"AzureSqlDatabase12_connectionString": {
+						"value": "[parameters('AzureSqlDatabase12_connectionString')]"
+					},
+					"AzureSqlDatabase13_connectionString": {
+						"value": "[parameters('AzureSqlDatabase13_connectionString')]"
+					},
+					"AzureSqlDatabase14_connectionString": {
+						"value": "[parameters('AzureSqlDatabase14_connectionString')]"
+					},
+					"AzureSqlDatabase15_connectionString": {
+						"value": "[parameters('AzureSqlDatabase15_connectionString')]"
+					},
+					"AzureSqlDatabase16_connectionString": {
+						"value": "[parameters('AzureSqlDatabase16_connectionString')]"
+					},
+					"AzureSqlDatabase17_connectionString": {
+						"value": "[parameters('AzureSqlDatabase17_connectionString')]"
+					},
+					"AzureSqlDatabase18_connectionString": {
+						"value": "[parameters('AzureSqlDatabase18_connectionString')]"
+					},
+					"AzureSqlDatabase19_connectionString": {
+						"value": "[parameters('AzureSqlDatabase19_connectionString')]"
+					},
+					"AzureSqlDatabase20_connectionString": {
+						"value": "[parameters('AzureSqlDatabase20_connectionString')]"
+					},
+					"AzureSqlDatabase21_connectionString": {
+						"value": "[parameters('AzureSqlDatabase21_connectionString')]"
+					},
+					"RestService2013_properties_typeProperties_url": {
+						"value": "[parameters('RestService2013_properties_typeProperties_url')]"
+					},
+					"RestService2014_properties_typeProperties_url": {
+						"value": "[parameters('RestService2014_properties_typeProperties_url')]"
+					},
+					"RestService2015_properties_typeProperties_url": {
+						"value": "[parameters('RestService2015_properties_typeProperties_url')]"
+					},
+					"RestService2016_properties_typeProperties_url": {
+						"value": "[parameters('RestService2016_properties_typeProperties_url')]"
+					},
+					"RestService2017_properties_typeProperties_url": {
+						"value": "[parameters('RestService2017_properties_typeProperties_url')]"
+					},
+					"RestService2018_properties_typeProperties_url": {
+						"value": "[parameters('RestService2018_properties_typeProperties_url')]"
+					},
+					"RestService2019_properties_typeProperties_url": {
+						"value": "[parameters('RestService2019_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "DataEngFactory_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase000009_connectionString": {
+						"value": "[parameters('AzureSqlDatabase000009_connectionString')]"
+					},
+					"RestService2020_properties_typeProperties_url": {
+						"value": "[parameters('RestService2020_properties_typeProperties_url')]"
+					},
+					"RestService2021_properties_typeProperties_url": {
+						"value": "[parameters('RestService2021_properties_typeProperties_url')]"
+					},
+					"RestService2022_properties_typeProperties_url": {
+						"value": "[parameters('RestService2022_properties_typeProperties_url')]"
+					},
+					"RestServiceY009_properties_typeProperties_url": {
+						"value": "[parameters('RestServiceY009_properties_typeProperties_url')]"
+					},
+					"RestServiceY2011_properties_typeProperties_url": {
+						"value": "[parameters('RestServiceY2011_properties_typeProperties_url')]"
+					},
+					"RestServiceY2012_properties_typeProperties_url": {
+						"value": "[parameters('RestServiceY2012_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'DataEngFactory_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "DataEngFactory_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'DataEngFactory_ArmTemplate_1')]"
+			]
+		}
+	]
+}

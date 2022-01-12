@@ -1,0 +1,90 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "DataEngFactory"
+		},
+		"AzureSqlDatabase009_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase11_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase12_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase13_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase14_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase15_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase16_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase17_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase18_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase19_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase20_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase21_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase000009_connectionString": {
+			"value": ""
+		},
+		"RestService2013_properties_typeProperties_url": {
+			"value": "https://data.cityofnewyork.us/resource/t7ny-aygi.json"
+		},
+		"RestService2014_properties_typeProperties_url": {
+			"value": " https://data.cityofnewyork.us/resource/gkne-dk5s.json"
+		},
+		"RestService2015_properties_typeProperties_url": {
+			"value": " https://data.cityofnewyork.us/resource/2yzn-sicd.json"
+		},
+		"RestService2016_properties_typeProperties_url": {
+			"value": "https://data.cityofnewyork.us/resource/uacg-pexx.json"
+		},
+		"RestService2017_properties_typeProperties_url": {
+			"value": "https://data.cityofnewyork.us/resource/biws-g3hs.json"
+		},
+		"RestService2018_properties_typeProperties_url": {
+			"value": "https://data.cityofnewyork.us/resource/t29m-gskq.json"
+		},
+		"RestService2019_properties_typeProperties_url": {
+			"value": "https://data.cityofnewyork.us/resource/2upf-qytp.json"
+		},
+		"RestService2020_properties_typeProperties_url": {
+			"value": "https://data.cityofnewyork.us/resource/kxp8-n2sj.json"
+		},
+		"RestService2021_properties_typeProperties_url": {
+			"value": "https://data.cityofnewyork.us/resource/m6nq-qud6.json"
+		},
+		"RestService2022_properties_typeProperties_url": {
+			"value": "https://data.cityofnewyork.us/resource/f9tw-8p66.json?$$app_token=6Y0VUW1uWY9rU0W8gTvNUbM93"
+		},
+		"RestServiceY009_properties_typeProperties_url": {
+			"value": " https://data.cityofnewyork.us/resource/f9tw-8p66.json"
+		},
+		"RestServiceY2011_properties_typeProperties_url": {
+			"value": "https://data.cityofnewyork.us/resource/uwyp-dntv.json"
+		},
+		"RestServiceY2012_properties_typeProperties_url": {
+			"value": "https://data.cityofnewyork.us/resource/kerk-3eby.json"
+		}
+	}
+}

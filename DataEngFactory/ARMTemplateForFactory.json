@@ -1,0 +1,3679 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "DataEngFactory"
+		},
+		"AzureSqlDatabase009_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase009'"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+		},
+		"AzureSqlDatabase11_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase11'"
+		},
+		"AzureSqlDatabase12_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase12'"
+		},
+		"AzureSqlDatabase13_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase13'"
+		},
+		"AzureSqlDatabase14_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase14'"
+		},
+		"AzureSqlDatabase15_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase15'"
+		},
+		"AzureSqlDatabase16_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase16'"
+		},
+		"AzureSqlDatabase17_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase17'"
+		},
+		"AzureSqlDatabase18_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase18'"
+		},
+		"AzureSqlDatabase19_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase19'"
+		},
+		"AzureSqlDatabase20_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase20'"
+		},
+		"AzureSqlDatabase21_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase21'"
+		},
+		"AzureSqlDatabase000009_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase000009'"
+		},
+		"RestService2013_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/t7ny-aygi.json"
+		},
+		"RestService2014_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": " https://data.cityofnewyork.us/resource/gkne-dk5s.json"
+		},
+		"RestService2015_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": " https://data.cityofnewyork.us/resource/2yzn-sicd.json"
+		},
+		"RestService2016_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/uacg-pexx.json"
+		},
+		"RestService2017_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/biws-g3hs.json"
+		},
+		"RestService2018_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/t29m-gskq.json"
+		},
+		"RestService2019_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/2upf-qytp.json"
+		},
+		"RestService2020_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/kxp8-n2sj.json"
+		},
+		"RestService2021_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/m6nq-qud6.json"
+		},
+		"RestService2022_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/f9tw-8p66.json?$$app_token=6Y0VUW1uWY9rU0W8gTvNUbM93"
+		},
+		"RestServiceY009_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": " https://data.cityofnewyork.us/resource/f9tw-8p66.json"
+		},
+		"RestServiceY2011_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/uwyp-dntv.json"
+		},
+		"RestServiceY2012_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://data.cityofnewyork.us/resource/kerk-3eby.json"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "SourceY009",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['vendorid']"
+										},
+										"sink": {
+											"name": "vendorid",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_pickup_datetime']"
+										},
+										"sink": {
+											"name": "tpep_pickup_datetime",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_dropoff_datetime']"
+										},
+										"sink": {
+											"name": "tpep_dropoff_datetime",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['passenger_count']"
+										},
+										"sink": {
+											"name": "passenger_count",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['trip_distance']"
+										},
+										"sink": {
+											"name": "trip_distance",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_longitude']"
+										},
+										"sink": {
+											"name": "pickup_longitude",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_latitude']"
+										},
+										"sink": {
+											"name": "pickup_latitude",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_longitude']"
+										},
+										"sink": {
+											"name": "dropoff_longitude",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_latitude']"
+										},
+										"sink": {
+											"name": "dropoff_latitude",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['payment_type']"
+										},
+										"sink": {
+											"name": "payment_type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['fare_amount']"
+										},
+										"sink": {
+											"name": "fare_amount",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['extra']"
+										},
+										"sink": {
+											"name": "extra",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tip_amount']"
+										},
+										"sink": {
+											"name": "tip_amount",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tolls_amount']"
+										},
+										"sink": {
+											"name": "tolls_amount",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['total_amount']"
+										},
+										"sink": {
+											"name": "total_amount",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['mta_tax']"
+										},
+										"sink": {
+											"name": "mta_tax",
+											"type": "String"
+										}
+									}
+								],
+								"collectionReference": ""
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "RestResource1",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable1",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "SourceY2011",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['vendorid']"
+										},
+										"sink": {
+											"name": "vendorid",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_pickup_datetime']"
+										},
+										"sink": {
+											"name": "tpep_pickup_datetime",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_datetime']"
+										},
+										"sink": {
+											"name": "dropoff_datetime",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['passenger_count']"
+										},
+										"sink": {
+											"name": "passenger_count",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['trip_distance']"
+										},
+										"sink": {
+											"name": "trip_distance",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_longitude']"
+										},
+										"sink": {
+											"name": "pickup_longitude",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_latitude']"
+										},
+										"sink": {
+											"name": "pickup_latitude",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['ratecodeid']"
+										},
+										"sink": {
+											"name": "ratecodeid",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_longitude']"
+										},
+										"sink": {
+											"name": "dropoff_longitude",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_latitude']"
+										},
+										"sink": {
+											"name": "dropoff_latitude",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['payment_type']"
+										},
+										"sink": {
+											"name": "payment_type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['fare_amount']"
+										},
+										"sink": {
+											"name": "fare_amount",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['extra']"
+										},
+										"sink": {
+											"name": "extra",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['mta_tax']"
+										},
+										"sink": {
+											"name": "mta_tax",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tip_amount']"
+										},
+										"sink": {
+											"name": "tip_amount",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tolls_amount']"
+										},
+										"sink": {
+											"name": "tolls_amount",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['total_amount']"
+										},
+										"sink": {
+											"name": "total_amount",
+											"type": "String"
+										}
+									}
+								],
+								"collectionReference": "",
+								"mapComplexValuesToString": true
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "RestResource2",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable2",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "SourceY2012",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['vendorid']"
+										},
+										"sink": {
+											"name": "vendorid",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_pickup_datetime']"
+										},
+										"sink": {
+											"name": "tpep_pickup_datetime",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_dropoff_datetime']"
+										},
+										"sink": {
+											"name": "tpep_dropoff_datetime",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['passenger_count']"
+										},
+										"sink": {
+											"name": "passenger_count",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['trip_distance']"
+										},
+										"sink": {
+											"name": "trip_distance",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_longitude']"
+										},
+										"sink": {
+											"name": "pickup_longitude",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_latitude']"
+										},
+										"sink": {
+											"name": "pickup_latitude",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['ratecodeid']"
+										},
+										"sink": {
+											"name": "ratecodeid",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['store_and_fwd_flag']"
+										},
+										"sink": {
+											"name": "store_and_fwd_flag",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_longitude']"
+										},
+										"sink": {
+											"name": "dropoff_longitude",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_latitude']"
+										},
+										"sink": {
+											"name": "dropoff_latitude",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['payment_type']"
+										},
+										"sink": {
+											"name": "payment_type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['fare_amount']"
+										},
+										"sink": {
+											"name": "fare_amount",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['extra']"
+										},
+										"sink": {
+											"name": "extra",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['mta_tax']"
+										},
+										"sink": {
+											"name": "mta_tax",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tip_amount']"
+										},
+										"sink": {
+											"name": "tip_amount",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tolls_amount']"
+										},
+										"sink": {
+											"name": "tolls_amount",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['total_amount']"
+										},
+										"sink": {
+											"name": "total_amount",
+											"type": "String"
+										}
+									}
+								],
+								"collectionReference": ""
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "RestResourceY2012",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable3",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "SourceY2013",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['vendorid']"
+										},
+										"sink": {
+											"name": "vendorid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_pickup_datetime']"
+										},
+										"sink": {
+											"name": "tpep_pickup_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_dropoff_datetime']"
+										},
+										"sink": {
+											"name": "tpep_dropoff_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['passenger_count']"
+										},
+										"sink": {
+											"name": "passenger_count"
+										}
+									},
+									{
+										"source": {
+											"path": "$['trip_distance']"
+										},
+										"sink": {
+											"name": "trip_distance"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_longitude']"
+										},
+										"sink": {
+											"name": "pickup_longitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_latitude']"
+										},
+										"sink": {
+											"name": "pickup_latitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['ratecodeid']"
+										},
+										"sink": {
+											"name": "ratecodeid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_longitude']"
+										},
+										"sink": {
+											"name": "dropoff_longitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_latitude']"
+										},
+										"sink": {
+											"name": "dropoff_latitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['payment_type']"
+										},
+										"sink": {
+											"name": "payment_type"
+										}
+									},
+									{
+										"source": {
+											"path": "$['fare_amount']"
+										},
+										"sink": {
+											"name": "fare_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['extra']"
+										},
+										"sink": {
+											"name": "extra"
+										}
+									},
+									{
+										"source": {
+											"path": "$['mta_tax']"
+										},
+										"sink": {
+											"name": "mta_tax"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tip_amount']"
+										},
+										"sink": {
+											"name": "tip_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tolls_amount']"
+										},
+										"sink": {
+											"name": "tolls_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['total_amount']"
+										},
+										"sink": {
+											"name": "total_amount"
+										}
+									}
+								],
+								"collectionReference": ""
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "RestResourceY2013",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable4",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "SourceY2014",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['vendor_id']"
+										},
+										"sink": {
+											"name": "vendor_id"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_datetime']"
+										},
+										"sink": {
+											"name": "pickup_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_datetime']"
+										},
+										"sink": {
+											"name": "dropoff_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['passenger_count']"
+										},
+										"sink": {
+											"name": "passenger_count"
+										}
+									},
+									{
+										"source": {
+											"path": "$['trip_distance']"
+										},
+										"sink": {
+											"name": "trip_distance"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_longitude']"
+										},
+										"sink": {
+											"name": "pickup_longitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_latitude']"
+										},
+										"sink": {
+											"name": "pickup_latitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_longitude']"
+										},
+										"sink": {
+											"name": "dropoff_longitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_latitude']"
+										},
+										"sink": {
+											"name": "dropoff_latitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['payment_type']"
+										},
+										"sink": {
+											"name": "payment_type"
+										}
+									},
+									{
+										"source": {
+											"path": "$['fare_amount']"
+										},
+										"sink": {
+											"name": "fare_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['mta_tax']"
+										},
+										"sink": {
+											"name": "mta_tax"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tip_amount']"
+										},
+										"sink": {
+											"name": "tip_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tolls_amount']"
+										},
+										"sink": {
+											"name": "tolls_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['total_amount']"
+										},
+										"sink": {
+											"name": "total_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['imp_surcharge']"
+										},
+										"sink": {
+											"name": "imp_surcharge"
+										}
+									},
+									{
+										"source": {
+											"path": "$['rate_code']"
+										},
+										"sink": {
+											"name": "rate_code"
+										}
+									}
+								],
+								"collectionReference": "",
+								"mapComplexValuesToString": true
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "RestResourceY2014",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable5",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "SourceY2015",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['passenger_count']"
+										},
+										"sink": {
+											"name": "passenger_count"
+										}
+									},
+									{
+										"source": {
+											"path": "$['trip_distance']"
+										},
+										"sink": {
+											"name": "trip_distance"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_longitude']"
+										},
+										"sink": {
+											"name": "pickup_longitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_latitude']"
+										},
+										"sink": {
+											"name": "pickup_latitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['ratecodeid']"
+										},
+										"sink": {
+											"name": "ratecodeid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_longitude']"
+										},
+										"sink": {
+											"name": "dropoff_longitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_latitude']"
+										},
+										"sink": {
+											"name": "dropoff_latitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['fare_amount']"
+										},
+										"sink": {
+											"name": "fare_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['extra']"
+										},
+										"sink": {
+											"name": "extra"
+										}
+									},
+									{
+										"source": {
+											"path": "$['mta_tax']"
+										},
+										"sink": {
+											"name": "mta_tax"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tip_amount']"
+										},
+										"sink": {
+											"name": "tip_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tolls_amount']"
+										},
+										"sink": {
+											"name": "tolls_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['total_amount']"
+										},
+										"sink": {
+											"name": "total_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['vendor_id']"
+										},
+										"sink": {
+											"name": "vendor_id"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_datetime']"
+										},
+										"sink": {
+											"name": "pickup_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_datetime']"
+										},
+										"sink": {
+											"name": "dropoff_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['payment_type']"
+										},
+										"sink": {
+											"name": "payment_type"
+										}
+									},
+									{
+										"source": {
+											"path": "$['imp_surcharge']"
+										},
+										"sink": {
+											"name": "imp_surcharge"
+										}
+									}
+								],
+								"collectionReference": "",
+								"mapComplexValuesToString": true
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "RestResourceY2015",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable6",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "SourceY2016",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['vendorid']"
+										},
+										"sink": {
+											"name": "vendorid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_pickup_datetime']"
+										},
+										"sink": {
+											"name": "tpep_pickup_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_dropoff_datetime']"
+										},
+										"sink": {
+											"name": "tpep_dropoff_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['passenger_count']"
+										},
+										"sink": {
+											"name": "passenger_count"
+										}
+									},
+									{
+										"source": {
+											"path": "$['trip_distance']"
+										},
+										"sink": {
+											"name": "trip_distance"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_longitude']"
+										},
+										"sink": {
+											"name": "pickup_longitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_latitude']"
+										},
+										"sink": {
+											"name": "pickup_latitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['ratecodeid']"
+										},
+										"sink": {
+											"name": "ratecodeid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_longitude']"
+										},
+										"sink": {
+											"name": "dropoff_longitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_latitude']"
+										},
+										"sink": {
+											"name": "dropoff_latitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['payment_type']"
+										},
+										"sink": {
+											"name": "payment_type"
+										}
+									},
+									{
+										"source": {
+											"path": "$['fare_amount']"
+										},
+										"sink": {
+											"name": "fare_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['extra']"
+										},
+										"sink": {
+											"name": "extra"
+										}
+									},
+									{
+										"source": {
+											"path": "$['mta_tax']"
+										},
+										"sink": {
+											"name": "mta_tax"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tip_amount']"
+										},
+										"sink": {
+											"name": "tip_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tolls_amount']"
+										},
+										"sink": {
+											"name": "tolls_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['improvement_surcharge']"
+										},
+										"sink": {
+											"name": "improvement_surcharge"
+										}
+									},
+									{
+										"source": {
+											"path": "$['total_amount']"
+										},
+										"sink": {
+											"name": "total_amount"
+										}
+									}
+								],
+								"collectionReference": "",
+								"mapComplexValuesToString": true
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "RestResourceY2016",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable7",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "SourceY2017",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['vendorid']"
+										},
+										"sink": {
+											"name": "vendorid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_pickup_datetime']"
+										},
+										"sink": {
+											"name": "tpep_pickup_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_dropoff_datetime']"
+										},
+										"sink": {
+											"name": "tpep_dropoff_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['passenger_count']"
+										},
+										"sink": {
+											"name": "passenger_count"
+										}
+									},
+									{
+										"source": {
+											"path": "$['trip_distance']"
+										},
+										"sink": {
+											"name": "trip_distance"
+										}
+									},
+									{
+										"source": {
+											"path": "$['ratecodeid']"
+										},
+										"sink": {
+											"name": "ratecodeid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pulocationid']"
+										},
+										"sink": {
+											"name": "pulocationid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dolocationid']"
+										},
+										"sink": {
+											"name": "dolocationid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['payment_type']"
+										},
+										"sink": {
+											"name": "payment_type"
+										}
+									},
+									{
+										"source": {
+											"path": "$['fare_amount']"
+										},
+										"sink": {
+											"name": "fare_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['extra']"
+										},
+										"sink": {
+											"name": "extra"
+										}
+									},
+									{
+										"source": {
+											"path": "$['mta_tax']"
+										},
+										"sink": {
+											"name": "mta_tax"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tip_amount']"
+										},
+										"sink": {
+											"name": "tip_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tolls_amount']"
+										},
+										"sink": {
+											"name": "tolls_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['improvement_surcharge']"
+										},
+										"sink": {
+											"name": "improvement_surcharge"
+										}
+									},
+									{
+										"source": {
+											"path": "$['total_amount']"
+										},
+										"sink": {
+											"name": "total_amount"
+										}
+									}
+								],
+								"collectionReference": "",
+								"mapComplexValuesToString": true
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "RestResourceY2017",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable8",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "SourceY2018",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['vendorid']"
+										},
+										"sink": {
+											"name": "vendorid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_pickup_datetime']"
+										},
+										"sink": {
+											"name": "tpep_pickup_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_dropoff_datetime']"
+										},
+										"sink": {
+											"name": "tpep_dropoff_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['passenger_count']"
+										},
+										"sink": {
+											"name": "passenger_count"
+										}
+									},
+									{
+										"source": {
+											"path": "$['trip_distance']"
+										},
+										"sink": {
+											"name": "trip_distance"
+										}
+									},
+									{
+										"source": {
+											"path": "$['ratecodeid']"
+										},
+										"sink": {
+											"name": "ratecodeid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pulocationid']"
+										},
+										"sink": {
+											"name": "pulocationid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dolocationid']"
+										},
+										"sink": {
+											"name": "dolocationid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['payment_type']"
+										},
+										"sink": {
+											"name": "payment_type"
+										}
+									},
+									{
+										"source": {
+											"path": "$['fare_amount']"
+										},
+										"sink": {
+											"name": "fare_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['extra']"
+										},
+										"sink": {
+											"name": "extra"
+										}
+									},
+									{
+										"source": {
+											"path": "$['mta_tax']"
+										},
+										"sink": {
+											"name": "mta_tax"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tip_amount']"
+										},
+										"sink": {
+											"name": "tip_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tolls_amount']"
+										},
+										"sink": {
+											"name": "tolls_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['improvement_surcharge']"
+										},
+										"sink": {
+											"name": "improvement_surcharge"
+										}
+									},
+									{
+										"source": {
+											"path": "$['total_amount']"
+										},
+										"sink": {
+											"name": "total_amount"
+										}
+									}
+								],
+								"mapComplexValuesToString": true
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "RestResourceY2018",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable9",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "SourceY2019",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['vendorid']"
+										},
+										"sink": {
+											"name": "vendorid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_pickup_datetime']"
+										},
+										"sink": {
+											"name": "tpep_pickup_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_dropoff_datetime']"
+										},
+										"sink": {
+											"name": "tpep_dropoff_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['passenger_count']"
+										},
+										"sink": {
+											"name": "passenger_count"
+										}
+									},
+									{
+										"source": {
+											"path": "$['trip_distance']"
+										},
+										"sink": {
+											"name": "trip_distance"
+										}
+									},
+									{
+										"source": {
+											"path": "$['ratecodeid']"
+										},
+										"sink": {
+											"name": "ratecodeid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pulocationid']"
+										},
+										"sink": {
+											"name": "pulocationid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dolocationid']"
+										},
+										"sink": {
+											"name": "dolocationid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['payment_type']"
+										},
+										"sink": {
+											"name": "payment_type"
+										}
+									},
+									{
+										"source": {
+											"path": "$['fare_amount']"
+										},
+										"sink": {
+											"name": "fare_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['extra']"
+										},
+										"sink": {
+											"name": "extra"
+										}
+									},
+									{
+										"source": {
+											"path": "$['mta_tax']"
+										},
+										"sink": {
+											"name": "mta_tax"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tip_amount']"
+										},
+										"sink": {
+											"name": "tip_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tolls_amount']"
+										},
+										"sink": {
+											"name": "tolls_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['improvement_surcharge']"
+										},
+										"sink": {
+											"name": "improvement_surcharge"
+										}
+									},
+									{
+										"source": {
+											"path": "$['total_amount']"
+										},
+										"sink": {
+											"name": "total_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['congestion_surcharge']"
+										},
+										"sink": {
+											"name": "congestion_surcharge"
+										}
+									}
+								],
+								"collectionReference": "",
+								"mapComplexValuesToString": true
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "RestResourceY2019",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable10",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "SourceY2020",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['vendorid']"
+										},
+										"sink": {
+											"name": "vendorid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_pickup_datetime']"
+										},
+										"sink": {
+											"name": "tpep_pickup_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_dropoff_datetime']"
+										},
+										"sink": {
+											"name": "tpep_dropoff_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['passenger_count']"
+										},
+										"sink": {
+											"name": "passenger_count"
+										}
+									},
+									{
+										"source": {
+											"path": "$['trip_distance']"
+										},
+										"sink": {
+											"name": "trip_distance"
+										}
+									},
+									{
+										"source": {
+											"path": "$['ratecodeid']"
+										},
+										"sink": {
+											"name": "ratecodeid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pulocationid']"
+										},
+										"sink": {
+											"name": "pulocationid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dolocationid']"
+										},
+										"sink": {
+											"name": "dolocationid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['payment_type']"
+										},
+										"sink": {
+											"name": "payment_type"
+										}
+									},
+									{
+										"source": {
+											"path": "$['fare_amount']"
+										},
+										"sink": {
+											"name": "fare_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['extra']"
+										},
+										"sink": {
+											"name": "extra"
+										}
+									},
+									{
+										"source": {
+											"path": "$['mta_tax']"
+										},
+										"sink": {
+											"name": "mta_tax"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tip_amount']"
+										},
+										"sink": {
+											"name": "tip_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tolls_amount']"
+										},
+										"sink": {
+											"name": "tolls_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['improvement_surcharge']"
+										},
+										"sink": {
+											"name": "improvement_surcharge"
+										}
+									},
+									{
+										"source": {
+											"path": "$['total_amount']"
+										},
+										"sink": {
+											"name": "total_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['congestion_surcharge']"
+										},
+										"sink": {
+											"name": "congestion_surcharge"
+										}
+									}
+								],
+								"collectionReference": "",
+								"mapComplexValuesToString": true
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "RestResourceY2020",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable11",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "SourceY2021",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['vendorid']"
+										},
+										"sink": {
+											"name": "vendorid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_pickup_datetime']"
+										},
+										"sink": {
+											"name": "tpep_pickup_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_dropoff_datetime']"
+										},
+										"sink": {
+											"name": "tpep_dropoff_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['passenger_count']"
+										},
+										"sink": {
+											"name": "passenger_count"
+										}
+									},
+									{
+										"source": {
+											"path": "$['trip_distance']"
+										},
+										"sink": {
+											"name": "trip_distance"
+										}
+									},
+									{
+										"source": {
+											"path": "$['ratecodeid']"
+										},
+										"sink": {
+											"name": "ratecodeid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pulocationid']"
+										},
+										"sink": {
+											"name": "pulocationid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dolocationid']"
+										},
+										"sink": {
+											"name": "dolocationid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['payment_type']"
+										},
+										"sink": {
+											"name": "payment_type"
+										}
+									},
+									{
+										"source": {
+											"path": "$['fare_amount']"
+										},
+										"sink": {
+											"name": "fare_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['extra']"
+										},
+										"sink": {
+											"name": "extra"
+										}
+									},
+									{
+										"source": {
+											"path": "$['mta_tax']"
+										},
+										"sink": {
+											"name": "mta_tax"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tip_amount']"
+										},
+										"sink": {
+											"name": "tip_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tolls_amount']"
+										},
+										"sink": {
+											"name": "tolls_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['improvement_surcharge']"
+										},
+										"sink": {
+											"name": "improvement_surcharge"
+										}
+									},
+									{
+										"source": {
+											"path": "$['total_amount']"
+										},
+										"sink": {
+											"name": "total_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['congestion_surcharge']"
+										},
+										"sink": {
+											"name": "congestion_surcharge"
+										}
+									}
+								],
+								"collectionReference": "",
+								"mapComplexValuesToString": true
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "RestResourceY2021",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable12",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "SourceYNew2009",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink",
+								"tableOption": "autoCreate",
+								"disableMetricsCollection": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['vendorid']"
+										},
+										"sink": {
+											"name": "vendorid"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_pickup_datetime']"
+										},
+										"sink": {
+											"name": "tpep_pickup_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tpep_dropoff_datetime']"
+										},
+										"sink": {
+											"name": "tpep_dropoff_datetime"
+										}
+									},
+									{
+										"source": {
+											"path": "$['passenger_count']"
+										},
+										"sink": {
+											"name": "passenger_count"
+										}
+									},
+									{
+										"source": {
+											"path": "$['trip_distance']"
+										},
+										"sink": {
+											"name": "trip_distance"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_longitude']"
+										},
+										"sink": {
+											"name": "pickup_longitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['pickup_latitude']"
+										},
+										"sink": {
+											"name": "pickup_latitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_longitude']"
+										},
+										"sink": {
+											"name": "dropoff_longitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['dropoff_latitude']"
+										},
+										"sink": {
+											"name": "dropoff_latitude"
+										}
+									},
+									{
+										"source": {
+											"path": "$['payment_type']"
+										},
+										"sink": {
+											"name": "payment_type"
+										}
+									},
+									{
+										"source": {
+											"path": "$['fare_amount']"
+										},
+										"sink": {
+											"name": "fare_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['extra']"
+										},
+										"sink": {
+											"name": "extra"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tip_amount']"
+										},
+										"sink": {
+											"name": "tip_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['tolls_amount']"
+										},
+										"sink": {
+											"name": "tolls_amount"
+										}
+									},
+									{
+										"source": {
+											"path": "$['total_amount']"
+										},
+										"sink": {
+											"name": "total_amount"
+										}
+									}
+								],
+								"collectionReference": "",
+								"mapComplexValuesToString": true
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "RestResource009",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "AzureSqlTable00009",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/RestResource1')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable1')]",
+				"[concat(variables('factoryId'), '/datasets/RestResource2')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable2')]",
+				"[concat(variables('factoryId'), '/datasets/RestResourceY2012')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable3')]",
+				"[concat(variables('factoryId'), '/datasets/RestResourceY2013')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable4')]",
+				"[concat(variables('factoryId'), '/datasets/RestResourceY2014')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable5')]",
+				"[concat(variables('factoryId'), '/datasets/RestResourceY2015')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable6')]",
+				"[concat(variables('factoryId'), '/datasets/RestResourceY2016')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable7')]",
+				"[concat(variables('factoryId'), '/datasets/RestResourceY2017')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable8')]",
+				"[concat(variables('factoryId'), '/datasets/RestResourceY2018')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable9')]",
+				"[concat(variables('factoryId'), '/datasets/RestResourceY2019')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable10')]",
+				"[concat(variables('factoryId'), '/datasets/RestResourceY2020')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable11')]",
+				"[concat(variables('factoryId'), '/datasets/RestResourceY2021')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable12')]",
+				"[concat(variables('factoryId'), '/datasets/RestResource009')]",
+				"[concat(variables('factoryId'), '/datasets/AzureSqlTable00009')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable009')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase009",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Test009"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase009')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Y2009"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable10')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase19",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Y2019"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase19')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable11')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase20",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Y2020"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase20')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable12')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase21",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Y2021"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase21')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase11",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Y2011"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase11')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase12",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "vendorid",
+						"type": "nvarchar"
+					},
+					{
+						"name": "tpep_pickup_datetime",
+						"type": "nvarchar"
+					},
+					{
+						"name": "tpep_dropoff_datetime",
+						"type": "nvarchar"
+					},
+					{
+						"name": "passenger_count",
+						"type": "nvarchar"
+					},
+					{
+						"name": "trip_distance",
+						"type": "nvarchar"
+					},
+					{
+						"name": "pickup_longitude",
+						"type": "nvarchar"
+					},
+					{
+						"name": "pickup_latitude",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ratecodeid",
+						"type": "nvarchar"
+					},
+					{
+						"name": "store_and_fwd_flag",
+						"type": "nvarchar"
+					},
+					{
+						"name": "dropoff_longitude",
+						"type": "nvarchar"
+					},
+					{
+						"name": "dropoff_latitude",
+						"type": "nvarchar"
+					},
+					{
+						"name": "payment_type",
+						"type": "nvarchar"
+					},
+					{
+						"name": "fare_amount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "extra",
+						"type": "nvarchar"
+					},
+					{
+						"name": "mta_tax",
+						"type": "nvarchar"
+					},
+					{
+						"name": "tip_amount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "tolls_amount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "total_amount",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Y2012"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase12')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase13",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "vendorid",
+						"type": "nvarchar"
+					},
+					{
+						"name": "tpep_pickup_datetime",
+						"type": "nvarchar"
+					},
+					{
+						"name": "tpep_dropoff_datetime",
+						"type": "nvarchar"
+					},
+					{
+						"name": "passenger_count",
+						"type": "nvarchar"
+					},
+					{
+						"name": "trip_distance",
+						"type": "nvarchar"
+					},
+					{
+						"name": "pickup_longitude",
+						"type": "nvarchar"
+					},
+					{
+						"name": "pickup_latitude",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ratecodeid",
+						"type": "nvarchar"
+					},
+					{
+						"name": "dropoff_longitude",
+						"type": "nvarchar"
+					},
+					{
+						"name": "dropoff_latitude",
+						"type": "nvarchar"
+					},
+					{
+						"name": "payment_type",
+						"type": "nvarchar"
+					},
+					{
+						"name": "fare_amount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "extra",
+						"type": "nvarchar"
+					},
+					{
+						"name": "mta_tax",
+						"type": "nvarchar"
+					},
+					{
+						"name": "tip_amount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "tolls_amount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "total_amount",
+						"type": "nvarchar"
+					},
+					{
+						"name": "store_and_fwd_flag",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Y2013"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase13')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable5')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase14",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Y2014"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase14')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable6')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase15",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Y2015"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase15')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable7')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase16",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Y2016"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase16')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable8')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase17",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Y2017"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase17')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable9')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase18",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Y2018"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase18')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResource009')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService2022",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/RestService2022')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResource1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestServiceY009",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/RestServiceY009')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResource2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestServiceY2011",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/RestServiceY2011')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResourceY2012')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestServiceY2012",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/RestServiceY2012')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResourceY2013')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService2013",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/RestService2013')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResourceY2014')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService2014",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/RestService2014')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResourceY2015')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService2015",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/RestService2015')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResourceY2016')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService2016",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/RestService2016')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResourceY2017')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService2017",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/RestService2017')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResourceY2018')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService2018",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/RestService2018')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResourceY2019')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService2019",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/RestService2019')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResourceY2020')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService2020",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/RestService2020')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestResourceY2021')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "RestService2021",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/RestService2021')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase009')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase009_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase1_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase11')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase11_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase12')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase12_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase13')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase13_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase14')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase14_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase15')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase15_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase16')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase16_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase17')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase17_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase18')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase18_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase19')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase19_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase20')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase20_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase21')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase21_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestService2013')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestService2013_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestService2014')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestService2014_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestService2015')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestService2015_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestService2016')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestService2016_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestService2017')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestService2017_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestService2018')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestService2018_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestService2019')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestService2019_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestService2020')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestService2020_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestService2021')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestService2021_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestService2022')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestService2022_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestServiceY009')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestServiceY009_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestServiceY2011')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestServiceY2011_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/RestServiceY2012')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('RestServiceY2012_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase000009')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase000009_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlTable00009')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase000009",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "new00009"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase000009')]"
+			]
+		}
+	]
+}
