@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://data.cityofnewyork.us/resource/kxp8-n2sj.json",
+			"url": "https://data.cityofnewyork.us/resource/kxp8-n2sj.json?$limit=100000&$$app_token=6Y0VUW1uWY9rU0W8gTvNUbM93 ",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
