@@ -2419,14 +2419,6 @@
 								"sink": {
 									"name": "total_amount"
 								}
-							},
-							{
-								"source": {
-									"path": "$['mta_tax']"
-								},
-								"sink": {
-									"name": "mta_tax"
-								}
 							}
 						],
 						"collectionReference": "",
