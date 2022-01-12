@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://data.cityofnewyork.us/resource/uwyp-dntv.json",
+			"url": "https://data.cityofnewyork.us/resource/uwyp-dntv.json?$limit=100000&$$app_token=6Y0VUW1uWY9rU0W8gTvNUbM93 ",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
