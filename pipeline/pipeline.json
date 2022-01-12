@@ -2358,6 +2358,14 @@
 							},
 							{
 								"source": {
+									"path": "$['store_and_fwd_flag']"
+								},
+								"sink": {
+									"name": "store_and_fwd_flag"
+								}
+							},
+							{
+								"source": {
 									"path": "$['dropoff_longitude']"
 								},
 								"sink": {
@@ -2398,6 +2406,14 @@
 							},
 							{
 								"source": {
+									"path": "$['mta_tax']"
+								},
+								"sink": {
+									"name": "mta_tax"
+								}
+							},
+							{
+								"source": {
 									"path": "$['tip_amount']"
 								},
 								"sink": {
@@ -2418,14 +2434,6 @@
 								},
 								"sink": {
 									"name": "total_amount"
-								}
-							},
-							{
-								"source": {
-									"path": "$['mta_tax']"
-								},
-								"sink": {
-									"name": "mta_tax"
 								}
 							}
 						],
