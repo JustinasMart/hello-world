@@ -1,0 +1,16 @@
+{
+	"name": "AzureSqlTable00009",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase000009",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "new00009"
+		}
+	}
+}
