@@ -1,0 +1,16 @@
+{
+	"name": "SQL2015_1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQL2015_1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "2015_1"
+		}
+	}
+}
