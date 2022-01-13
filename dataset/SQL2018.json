@@ -1,0 +1,16 @@
+{
+	"name": "SQL2018",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQL2018",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "2018"
+		}
+	}
+}
