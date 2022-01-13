@@ -3,198 +3,6 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "SourceY009",
-				"type": "Copy",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "RestSource",
-						"httpRequestTimeout": "00:01:40",
-						"requestInterval": "00.00:00:00.010",
-						"requestMethod": "GET",
-						"paginationRules": {
-							"supportRFC5988": "true"
-						}
-					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"tableOption": "autoCreate",
-						"disableMetricsCollection": false
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"path": "$['vendorid']"
-								},
-								"sink": {
-									"name": "vendorid",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['tpep_pickup_datetime']"
-								},
-								"sink": {
-									"name": "tpep_pickup_datetime",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['tpep_dropoff_datetime']"
-								},
-								"sink": {
-									"name": "tpep_dropoff_datetime",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['passenger_count']"
-								},
-								"sink": {
-									"name": "passenger_count",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['trip_distance']"
-								},
-								"sink": {
-									"name": "trip_distance",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['pickup_longitude']"
-								},
-								"sink": {
-									"name": "pickup_longitude",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['pickup_latitude']"
-								},
-								"sink": {
-									"name": "pickup_latitude",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['dropoff_longitude']"
-								},
-								"sink": {
-									"name": "dropoff_longitude",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['dropoff_latitude']"
-								},
-								"sink": {
-									"name": "dropoff_latitude",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['payment_type']"
-								},
-								"sink": {
-									"name": "payment_type",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['fare_amount']"
-								},
-								"sink": {
-									"name": "fare_amount",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['extra']"
-								},
-								"sink": {
-									"name": "extra",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['tip_amount']"
-								},
-								"sink": {
-									"name": "tip_amount",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['tolls_amount']"
-								},
-								"sink": {
-									"name": "tolls_amount",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['total_amount']"
-								},
-								"sink": {
-									"name": "total_amount",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['mta_tax']"
-								},
-								"sink": {
-									"name": "mta_tax",
-									"type": "String"
-								}
-							}
-						],
-						"collectionReference": ""
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "RestResource1",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
 				"name": "SourceY2011",
 				"type": "Copy",
 				"dependsOn": [],
@@ -215,11 +23,6 @@
 						"paginationRules": {
 							"supportRFC5988": "true"
 						}
-					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"tableOption": "autoCreate",
-						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -386,12 +189,6 @@
 				"inputs": [
 					{
 						"referenceName": "RestResource2",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable2",
 						"type": "DatasetReference"
 					}
 				]
@@ -598,12 +395,6 @@
 						"referenceName": "RestResourceY2012",
 						"type": "DatasetReference"
 					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable3",
-						"type": "DatasetReference"
-					}
 				]
 			},
 			{
@@ -780,12 +571,6 @@
 				"inputs": [
 					{
 						"referenceName": "RestResourceY2013",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable4",
 						"type": "DatasetReference"
 					}
 				]
@@ -967,12 +752,6 @@
 						"referenceName": "RestResourceY2014",
 						"type": "DatasetReference"
 					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable5",
-						"type": "DatasetReference"
-					}
 				]
 			},
 			{
@@ -996,11 +775,6 @@
 						"paginationRules": {
 							"supportRFC5988": "true"
 						}
-					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"tableOption": "autoCreate",
-						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -1142,12 +916,6 @@
 				"inputs": [
 					{
 						"referenceName": "RestResourceY2015",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable6",
 						"type": "DatasetReference"
 					}
 				]
@@ -1337,12 +1105,6 @@
 						"referenceName": "RestResourceY2016",
 						"type": "DatasetReference"
 					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable7",
-						"type": "DatasetReference"
-					}
 				]
 			},
 			{
@@ -1514,12 +1276,6 @@
 						"referenceName": "RestResourceY2017",
 						"type": "DatasetReference"
 					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable8",
-						"type": "DatasetReference"
-					}
 				]
 			},
 			{
@@ -1543,11 +1299,6 @@
 						"paginationRules": {
 							"supportRFC5988": "true"
 						}
-					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"tableOption": "autoCreate",
-						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -1688,12 +1439,6 @@
 				"inputs": [
 					{
 						"referenceName": "RestResourceY2018",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable9",
 						"type": "DatasetReference"
 					}
 				]
@@ -1875,12 +1620,6 @@
 						"referenceName": "RestResourceY2019",
 						"type": "DatasetReference"
 					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable10",
-						"type": "DatasetReference"
-					}
 				]
 			},
 			{
@@ -2060,12 +1799,6 @@
 						"referenceName": "RestResourceY2020",
 						"type": "DatasetReference"
 					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable11",
-						"type": "DatasetReference"
-					}
 				]
 			},
 			{
@@ -2243,181 +1976,6 @@
 				"inputs": [
 					{
 						"referenceName": "RestResourceY2021",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable12",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
-				"name": "SourceYNew2009",
-				"type": "Copy",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "RestSource",
-						"httpRequestTimeout": "00:01:40",
-						"requestInterval": "00.00:00:00.010",
-						"requestMethod": "GET",
-						"paginationRules": {
-							"supportRFC5988": "true"
-						}
-					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"tableOption": "autoCreate",
-						"disableMetricsCollection": false
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"path": "$['vendorid']"
-								},
-								"sink": {
-									"name": "vendorid"
-								}
-							},
-							{
-								"source": {
-									"path": "$['tpep_pickup_datetime']"
-								},
-								"sink": {
-									"name": "tpep_pickup_datetime"
-								}
-							},
-							{
-								"source": {
-									"path": "$['tpep_dropoff_datetime']"
-								},
-								"sink": {
-									"name": "tpep_dropoff_datetime"
-								}
-							},
-							{
-								"source": {
-									"path": "$['passenger_count']"
-								},
-								"sink": {
-									"name": "passenger_count"
-								}
-							},
-							{
-								"source": {
-									"path": "$['trip_distance']"
-								},
-								"sink": {
-									"name": "trip_distance"
-								}
-							},
-							{
-								"source": {
-									"path": "$['pickup_longitude']"
-								},
-								"sink": {
-									"name": "pickup_longitude"
-								}
-							},
-							{
-								"source": {
-									"path": "$['pickup_latitude']"
-								},
-								"sink": {
-									"name": "pickup_latitude"
-								}
-							},
-							{
-								"source": {
-									"path": "$['dropoff_longitude']"
-								},
-								"sink": {
-									"name": "dropoff_longitude"
-								}
-							},
-							{
-								"source": {
-									"path": "$['dropoff_latitude']"
-								},
-								"sink": {
-									"name": "dropoff_latitude"
-								}
-							},
-							{
-								"source": {
-									"path": "$['payment_type']"
-								},
-								"sink": {
-									"name": "payment_type"
-								}
-							},
-							{
-								"source": {
-									"path": "$['fare_amount']"
-								},
-								"sink": {
-									"name": "fare_amount"
-								}
-							},
-							{
-								"source": {
-									"path": "$['extra']"
-								},
-								"sink": {
-									"name": "extra"
-								}
-							},
-							{
-								"source": {
-									"path": "$['tip_amount']"
-								},
-								"sink": {
-									"name": "tip_amount"
-								}
-							},
-							{
-								"source": {
-									"path": "$['tolls_amount']"
-								},
-								"sink": {
-									"name": "tolls_amount"
-								}
-							},
-							{
-								"source": {
-									"path": "$['total_amount']"
-								},
-								"sink": {
-									"name": "total_amount"
-								}
-							}
-						],
-						"collectionReference": "",
-						"mapComplexValuesToString": true
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "RestResource009",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable00009",
 						"type": "DatasetReference"
 					}
 				]
