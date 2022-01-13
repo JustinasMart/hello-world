@@ -590,6 +590,12 @@
 						"referenceName": "RestResourceY2013",
 						"type": "DatasetReference"
 					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQL2013",
+						"type": "DatasetReference"
+					}
 				]
 			},
 			{
