@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://data.cityofnewyork.us/resource/t29m-gskq.json",
+			"url": "https://data.cityofnewyork.us/resource/t29m-gskq.json?$limit=10000&$$app_token=6Y0VUW1uWY9rU0W8gTvNUbM93 ",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
