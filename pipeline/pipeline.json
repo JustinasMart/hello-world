@@ -1683,6 +1683,12 @@
 						"referenceName": "RestResourceY2019",
 						"type": "DatasetReference"
 					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQL2019",
+						"type": "DatasetReference"
+					}
 				]
 			},
 			{
