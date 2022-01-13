@@ -1,0 +1,16 @@
+{
+	"name": "SQL2021",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQL2021",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "2021"
+		}
+	}
+}

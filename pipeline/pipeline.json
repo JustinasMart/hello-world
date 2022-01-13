@@ -1868,6 +1868,12 @@
 						"referenceName": "RestResourceY2020",
 						"type": "DatasetReference"
 					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQL2020",
+						"type": "DatasetReference"
+					}
 				]
 			},
 			{
@@ -2045,6 +2051,12 @@
 				"inputs": [
 					{
 						"referenceName": "RestResourceY2021",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQL2021",
 						"type": "DatasetReference"
 					}
 				]
