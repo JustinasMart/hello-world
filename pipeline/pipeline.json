@@ -775,6 +775,12 @@
 						"referenceName": "RestResourceY2014",
 						"type": "DatasetReference"
 					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQL2014",
+						"type": "DatasetReference"
+					}
 				]
 			},
 			{
@@ -798,6 +804,11 @@
 						"paginationRules": {
 							"supportRFC5988": "true"
 						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -939,6 +950,12 @@
 				"inputs": [
 					{
 						"referenceName": "RestResourceY2015",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQL2015",
 						"type": "DatasetReference"
 					}
 				]
