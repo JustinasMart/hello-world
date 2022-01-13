@@ -1145,6 +1145,12 @@
 						"referenceName": "RestResourceY2016",
 						"type": "DatasetReference"
 					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQL2016",
+						"type": "DatasetReference"
+					}
 				]
 			},
 			{

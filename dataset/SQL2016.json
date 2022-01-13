@@ -1,0 +1,16 @@
+{
+	"name": "SQL2016",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQL2016",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "2016"
+		}
+	}
+}
