@@ -1040,14 +1040,6 @@
 							},
 							{
 								"source": {
-									"path": "$['ratecodeid']"
-								},
-								"sink": {
-									"name": "ratecodeid"
-								}
-							},
-							{
-								"source": {
 									"path": "$['dropoff_longitude']"
 								},
 								"sink": {
