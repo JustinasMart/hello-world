@@ -1,0 +1,16 @@
+{
+	"name": "SQL2011",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQL2011",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "2011"
+		}
+	}
+}
