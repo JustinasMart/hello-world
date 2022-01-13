@@ -1,0 +1,16 @@
+{
+	"name": "SQL2017",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQL2017",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "2017"
+		}
+	}
+}

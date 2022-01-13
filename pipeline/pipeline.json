@@ -1322,6 +1322,12 @@
 						"referenceName": "RestResourceY2017",
 						"type": "DatasetReference"
 					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SQL2017",
+						"type": "DatasetReference"
+					}
 				]
 			},
 			{
